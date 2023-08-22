@@ -82,7 +82,7 @@ function StaffRegistration() {
                     </div>
                     <div className='form-group' style={{ marginLeft: "60px", marginRight: "320px" }}>
                         <div > <label> Deparment </label></div>
-                        <select className='p-2 col-10' requireds name='deparment' onClick={handleChange} >
+                        <select className='p-2 col-9' requireds name='deparment' onClick={handleChange} >
                             <option selected>
                                 CSE
                             </option>
