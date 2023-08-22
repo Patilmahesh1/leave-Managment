@@ -80,7 +80,7 @@ function StaffRegistration() {
                             <input className='p-2' onChange={handleChange} required name='phone' type='number' value={input.phone} />
                         </div>
                     </div>
-                    <div className='form-group' style={{ marginLeft: "40px", marginRight: "320px" }}>
+                    <div className='form-group' style={{ marginLeft: "60px", marginRight: "320px" }}>
                         <div > <label> Deparment </label></div>
                         <select className='p-2 col-8' requireds name='deparment' onClick={handleChange} >
                             <option selected>
