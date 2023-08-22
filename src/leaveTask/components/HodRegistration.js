@@ -74,7 +74,7 @@ function HodRegistration() {
                 </div>
                 <div style={{ marginLeft: "60px", marginRight:"320px" }}>
                     <div > <label> Deparment </label></div>
-                    <select className='p-2 col-8' name='deparment' required onClick={handleChange} >
+                    <select className='p-2 col-10' name='deparment' required onClick={handleChange} >
                         <option selected>
                             EEE
                         </option>
