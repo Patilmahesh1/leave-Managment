@@ -64,7 +64,7 @@ function StaffHome() {
                     <h2 style={{color:"purple",marginLeft:"100px"}}>APPLY FOR LEAVE</h2>
                 </ModalHeader>
                 <ModalBody
-                    style={{ margin: "0 auto" }}
+                    style={{ margin: "0 auto",backgroundColor:"black" }}
                 >
 
                     <form onSubmit={handleSubmit}>
@@ -106,13 +106,12 @@ function StaffHome() {
                     <p>Rejected</p>
                 </div>
             </div>
-            <hr />
-            <div className='d-flex container' >
+            <div className='d-flex container mt-3'>
                 {data?.map((info) => {
-                    return <div className="card col-sm-3 m-2" >
+                    return <div className="card col-sm-3 m-2" style={{backgroundColor:"black",color:"white"}}>
                         <div className="card-body" style={{boxShadow:"2px 6px 8px purple"}}>
-                            <p><strong>Leave From </strong></p>
-                            <p> {info.fromDate} to {info.toDate}</p>
+                            <p><strong>Leave From </strong><br/>
+                            {info.fromDate} to {info.toDate}</p>
                             <p><strong>Number Of Days</strong> :{info.days}</p>
                             <p><strong>Reason:</strong><br /> {info.reason}</p>
                             <p><strong>Status:</strong><br /> {info.status}</p>

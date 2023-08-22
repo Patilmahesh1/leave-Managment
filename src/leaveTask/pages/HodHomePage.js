@@ -38,9 +38,9 @@ function HodHomePage() {
       <div className='d-flex ' style={{ margin: "90px 0 0"}}>
         {data?.map((data, i) => {
           return <div className="card col-3 mx-5" key={i}>
-            <div className="card-body" style={{boxShadow:"2px 6px 8px purple" }}>
-              <p><strong>Leave From </strong></p>
-              <p>{data.fromDate} to {data.toDate}</p>
+            <div className="card-body" style={{boxShadow:"2px 6px 8px purple",backgroundColor:"black",color:"white" }}>
+              <p><strong>Leave From </strong><br/>
+              {data.fromDate} to {data.toDate}</p>
               <p><strong>Number Of Days</strong> : {data.days}</p>
               <p><strong>Reason:</strong> <br /> {data.reason}</p>
               <p><strong>Status: </strong>{data.status}</p>

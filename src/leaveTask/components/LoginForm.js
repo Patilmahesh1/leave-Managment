@@ -63,6 +63,7 @@ function LoginForm() {
                     borderRadius={"25px"}
                     border={"0.25px solid #ccc"}
                     padding={"70px"}
+                    backgroundColor={"black"}
                     display={"flex"}
                     flexDirection={"column"}
                     maxWidth={"400px"}
@@ -74,11 +75,11 @@ function LoginForm() {
                         }
                     }}
                 >
-                    <Typography color="purple" textAlign={"center"} variant='h4'> Login</Typography>
-                    <TextField onChange={handleChange} name="username" value={loginData.username}  margin='normal' placeholder='Enter Username' type="text" />
-                    <TextField onChange={handleChange} name="password" value={loginData.password} margin='normal' placeholder='Enter Password' type="password" />
+                    <Typography color="white" textAlign={"center"} variant='h4'> Login</Typography>
+                    <input className='p-2 my-3' onChange={handleChange} name="username" value={loginData.username}  margin='normal' placeholder='Username' type="text" />
+                    <input className='p-2' onChange={handleChange} name="password" value={loginData.password} margin='normal' placeholder='Password' type="password" />
                     <Button sx={{ mt: 2 }} type='submit' color='secondary' variant='contained'>Login</Button>
-                    <p className='mt-3'>Not Registered Yet? <NavLink to={"/register"}>Register</NavLink></p>
+                    <p className='mt-3 text-white text-center'>Not Registered Yet? <NavLink to={"/register"}>Register</NavLink></p>
                 </Box>
             </form>
         </>

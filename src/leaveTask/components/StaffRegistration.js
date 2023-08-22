@@ -14,7 +14,7 @@ function StaffRegistration() {
         deparment: "",
         username: "",
         password: "",
-        role:"Staff"
+        role: "Staff"
     })
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -29,7 +29,6 @@ function StaffRegistration() {
             username: "",
             password: "",
         })
-
     }
 
     useEffect(() => {
@@ -43,6 +42,20 @@ function StaffRegistration() {
         setInput((pre) => ({ ...pre, [name]: value }))
 
     }
+
+
+    const userName = staffData.map((user) => {
+        return user.username
+    })
+    const data = userName.find((data) => data === input.username)
+
+    const hodData = JSON.parse(localStorage.getItem("hodLoginData"))
+    const hodUserName = hodData.map((user) => {
+        return user.username
+    })
+    const hData = hodUserName.find((data) => data === input.username)
+    
+
     return (
         <>
             <div>
@@ -50,26 +63,26 @@ function StaffRegistration() {
                     <div className='d-flex justify-content-around mb-4'>
                         <div className='form-group'>
                             <label>First Name</label><br />
-                            <input className='form-control' onChange={handleChange} required name='fname' type='text' value={input.fname} />
+                            <input className='p-2' onChange={handleChange} required name='fname' type='text' value={input.fname} />
                         </div>
                         <div className='form-group'>
                             <label>Last Name</label><br />
-                            <input className='form-control' onChange={handleChange} required name='lname' type='text' value={input.lname} />
+                            <input className='p-2' onChange={handleChange} required name='lname' type='text' value={input.lname} />
                         </div>
                     </div>
                     <div className='d-flex justify-content-around mb-4'>
                         <div className='form-group'>
                             <label>Email</label><br />
-                            <input className='form-control' onChange={handleChange} required name='email' type='email' value={input.email} />
+                            <input className='p-2' onChange={handleChange} required name='email' type='email' value={input.email} />
                         </div>
                         <div className='form-group'>
                             <label>Contact</label><br />
-                            <input className='form-control' onChange={handleChange} required name='phone' type='number' value={input.phone} />
+                            <input className='p-2' onChange={handleChange} required name='phone' type='number' value={input.phone} />
                         </div>
                     </div>
-                    <div className='form-group' style={{ marginLeft: "40px",marginRight:"320px" }}>
+                    <div className='form-group' style={{ marginLeft: "40px", marginRight: "320px" }}>
                         <div > <label> Deparment </label></div>
-                        <select className='form-control' requireds name='deparment' onClick={handleChange} >
+                        <select className='p-2 col-12' requireds name='deparment' onClick={handleChange} >
                             <option selected>
                                 CSE
                             </option>
@@ -91,21 +104,16 @@ function StaffRegistration() {
                     <div className='d-flex justify-content-around mb-4 mt-4'>
                         <div className='form-group'>
                             <label>Username</label><br />
-                            <input className='form-control' onChange={handleChange} required name="username" type='text' value={input.username} />
+                            <input className='p-2' onChange={handleChange} required name="username" type='text' value={input.username} />
+                            {(data === input.username || hData === input.username) && <div className='text-danger'>Please enter new username</div>} 
                         </div>
                         <div className='form-group'>
                             <label>Password</label><br />
-                            <input className='form-control' onChange={handleChange} required name='password' type='password' value={input.password} />
+                            <input className='p-2' onChange={handleChange} required name='password' type='password' value={input.password} />
                         </div>
                     </div>
-                    <Button style={{width:"90%",marginLeft:"30px"}} className="text-center" sx={{ mt: 2 }} type='submit' color='secondary' variant='contained'>Register</Button>
+                    <Button style={{ width: "90%", marginLeft: "30px" }} className="text-center" sx={{ mt: 2 }} type='submit' color='secondary' variant='contained'>Register</Button>
                     <p className='mt-3 text-center'>Already Registered <NavLink to={"/login"}>Login</NavLink></p>
-                    {/* <div className='d-flex  d-block flex-row-reverse mt-3 bg-secondary '>
-                        <div style={{ width: "100%" }}>
-                            <button type='submit' style={{ width: "100%"}}>Register</button>
-                        </div>
-                    </div> */}
-
                 </form>
             </div>
         </>

@@ -13,7 +13,7 @@ function NavBar() {
     <>
       <AppBar sx={{ backgroundColor: "black" }}>
         <Toolbar>
-            <h4>LEAVE MANAGMENT</h4>
+            <h4>LEAVE <span style={{color:"orange"}} >MANAGEMENT</span></h4>
           <div style={{ marginLeft: "auto" }}>
             <Button color="secondary" variant="contained" onClick={() => navigate("login")}>Login</Button>
             <Button color='secondary' variant="contained" style={{ marginLeft: "15px" }} onClick={handleLogout}>Logout</Button>
